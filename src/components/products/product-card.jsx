@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import styles from "./products.module.css";
+import { useCart } from "../../providers/cart-provider";
 export const ProductCard = ({ product }) => {
-  const [inCart, setInCart] = useState(false);
+  // const [inCart, setInCart] = useState(false);
   const [inWishlist, setInWishlist] = useState(false);
+  const { cartProductsIDs, addOrRemoveProductToCart } = useCart();
+
+  const inCart = cartProductsIDs.findIndex((id) => id === product.id) !== -1;
 
   return (
     <div className={styles.card}>
@@ -38,7 +42,10 @@ export const ProductCard = ({ product }) => {
       <div className={styles.actions}>
         <button
           className={`${styles.button} ${inCart ? styles.inCart : ""}`}
-          onClick={() => setInCart(!inCart)}
+          onClick={() => {
+            addOrRemoveProductToCart(product.id);
+            // setInCart((prev) => !prev);
+          }}
         >
           {inCart ? "Remove from Cart" : "Add to Cart"}
         </button>
