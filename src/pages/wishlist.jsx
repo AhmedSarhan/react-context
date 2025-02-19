@@ -1,15 +1,13 @@
 import React from "react";
 import Products from "../assets/data/products.json";
 import { ProductCard } from "../components/products/product-card";
-import { useCart } from "../providers/cart-provider";
 
-export const Cart = () => {
-  const { cartProducts } = useCart();
+export const Wishlist = () => {
   return (
     <div>
-      <h3>Cart Page</h3>
+      <h3>Wishlist Page</h3>
       <div className="products-container">
-        {cartProducts.map((product) => (
+        {Products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
