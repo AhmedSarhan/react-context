@@ -32,4 +32,5 @@ export default App;
 4. reflect the correct state on the heart icon
 5. prevent duplicate additions / remove or add 
 6. Extra: use the useReducer (Redux Pattern)
+
 */

@@ -4,20 +4,26 @@ import styles from "./products.module.css";
 import { useCart } from "../../providers/cart-provider";
 export const ProductCard = ({ product }) => {
   // const [inCart, setInCart] = useState(false);
-  const [inWishlist, setInWishlist] = useState(false);
-  const { cartProductsIDs, addOrRemoveProductToCart } = useCart();
+  // const [inWishlist, setInWishlist] = useState(false);
+  const {
+    cartProductsIDs,
+    wishListProductsIDs,
+    addOrRemoveProductToCart,
+    addOrRemoveFromWishList,
+  } = useCart();
 
   const inCart = cartProductsIDs.findIndex((id) => id === product.id) !== -1;
-
+  const inWishList =
+    wishListProductsIDs.findIndex((id) => id === product.id) !== -1;
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img src={product.image} alt={product.name} className={styles.image} />
         <button
           className={styles.wishlistButton}
-          onClick={() => setInWishlist(!inWishlist)}
+          onClick={() => addOrRemoveFromWishList(product.id)}
         >
-          {inWishlist ? (
+          {inWishList ? (
             <FaHeart className={styles.heartIcon} />
           ) : (
             <FaRegHeart className={styles.heartIcon} />
