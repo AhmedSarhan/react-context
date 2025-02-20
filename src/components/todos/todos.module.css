@@ -1,0 +1,86 @@
+.sectionContainer {
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.sectionContainer h3 {
+  text-align: center;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  /* gap: 0.5rem; */
+  min-width: 350px;
+  max-width: 100%;
+}
+
+
+.formGroup label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.formGroup input, .formGroup textarea, .formGroup select {
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  max-width: 100%;
+  font-size: 12px;
+  margin-bottom: 0.25rem;
+  transition: border-color 0.25s;
+}
+
+.formGroup input:focus, .formGroup textarea:focus, .formGroup select:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.formGroup input[error="true"], .formGroup textarea[error="true"], .formGroup select[error="true"] {
+  border-color: #ff4d4d;
+}
+
+.formGroup .error {
+  font-size: 10px;
+  color: #ff4d4d;
+  margin: 0;
+  /* margin-top: 0.25rem; */
+
+}
+
+.todosListing {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.todoCard {
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todoHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todoCard button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  margin: 10px 0;
+}

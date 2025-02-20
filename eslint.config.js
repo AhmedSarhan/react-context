@@ -34,6 +34,7 @@ export default [
         { allowConstantExport: true },
       ],
       "react/prop-types": "off",
+      "react/no-unknown-property": "warn",
       "no-unused-vars": "warn"
     },
   },

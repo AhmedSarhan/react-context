@@ -32,6 +32,10 @@ h1 {
   line-height: 1.1;
 }
 
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -78,11 +82,5 @@ input, textarea {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-}
-
-.products-container {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-block: 1rem;
+  padding: 1rem 0;
 }

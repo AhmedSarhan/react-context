@@ -1,24 +1,13 @@
-import { Route, Routes } from "react-router";
-import { Home } from "./pages/home";
-import { Cart } from "./pages/cart";
-import { Header } from "./components/header";
-import { CartProvider } from "./providers/cart-provider";
-import { Wishlist } from "./pages/wishlist";
+import { TodoForm } from "./components/todos/todo-form";
+import { TodosListing } from "./components/todos/todos-listing";
 
 function App() {
   return (
-    <CartProvider>
-      <Header />
-      <div className="container">
-        <h1>Context API in React</h1>
-
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="wishlist" element={<Wishlist />} />
-        </Routes>
-      </div>
-    </CartProvider>
+    <div className="container">
+      <h1>Todos App</h1>
+      <TodoForm />
+      <TodosListing />
+    </div>
   );
 }
 
